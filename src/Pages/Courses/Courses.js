@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Courses = () => {
 	return (
@@ -22,28 +23,30 @@ const Courses = () => {
 					<div class='lg:m-4 w-full lg:w-[58rem] lg:ml-[20rem] bg-white rounded-xl p-2 md:p-4 lg:p-8 md:py-8 px-2 md:px-8 '>
 						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
 							{/* Course - 1 */}
-							<div className='card w-full bg-base-100 shadow-xl shadow-gray-400'>
-								<figure className='p-1 rounded-lg'>
-									<img
-										src='https://placeimg.com/400/225/arch'
-										alt='Shoes'
-										className='rounded-lg'
-									/>
-								</figure>
-								<div className='card-body'>
-									<h2 className='card-title -mt-7'>
-										Shoes!
-										<div className='badge badge-primary'>NEW</div>
-									</h2>
-									<p>Description</p>
-									<p>Instructor</p>
-									<div className='card-actions justify-evenly'>
-										<span>ratings</span>
-										<span>icons</span>
-										<span>student</span>
+							<Link to='/details'>
+								<div className='card w-full bg-base-100 shadow-xl shadow-gray-400'>
+									<figure className='p-1 rounded-lg'>
+										<img
+											src='https://placeimg.com/400/225/arch'
+											alt='Shoes'
+											className='rounded-lg'
+										/>
+									</figure>
+									<div className='card-body'>
+										<h2 className='card-title -mt-7'>
+											Shoes!
+											<div className='badge badge-primary'>NEW</div>
+										</h2>
+										<p>Description</p>
+										<p>Instructor</p>
+										<div className='card-actions justify-evenly'>
+											<span>ratings</span>
+											<span>icons</span>
+											<span>student</span>
+										</div>
 									</div>
 								</div>
-							</div>
+							</Link>
 							{/* Course - 2 */}
 							<div className='card w-full bg-base-100 shadow-xl'>
 								<figure>
