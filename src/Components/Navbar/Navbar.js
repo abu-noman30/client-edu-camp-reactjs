@@ -8,11 +8,18 @@ const Navbar = () => {
 		<>
 			<div className='px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
 				<div className='relative flex items-center justify-between z-2'>
-					<NavLink to='/' aria-label='eduCamp' title='Company' className='inline-flex items-center'>
+					<NavLink
+						to='/'
+						aria-label='eduCamp'
+						title='Company'
+						className='inline-flex items-center'
+					>
 						<span>
 							<img src='Images/logo.png' alt='logo' className='w-14 h-14' />
 						</span>
-						<span className='ml-2 text-xl lg:text-3xl font-bold tracking-wide text-gray-800 '>eduCamp</span>
+						<span className='ml-2 text-xl lg:text-3xl font-bold tracking-wide text-gray-800 '>
+							eduCamp
+						</span>
 					</NavLink>
 					<ul className='hidden items-center space-x-8 lg:flex'>
 						<li>
@@ -78,6 +85,9 @@ const Navbar = () => {
 					</ul>
 					<ul className='hidden items-center space-x-8 lg:flex'>
 						<li>
+							<input type='checkbox' className='toggle mr-2' />
+						</li>
+						<li>
 							<NavLink
 								to='/login'
 								className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
@@ -113,9 +123,18 @@ const Navbar = () => {
 							onClick={() => setIsMenuOpen(true)}
 						>
 							<svg className='w-5 text-gray-600' viewBox='0 0 24 24'>
-								<path fill='currentColor' d='M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z' />
-								<path fill='currentColor' d='M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z' />
-								<path fill='currentColor' d='M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z' />
+								<path
+									fill='currentColor'
+									d='M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z'
+								/>
+								<path
+									fill='currentColor'
+									d='M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z'
+								/>
+								<path
+									fill='currentColor'
+									d='M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z'
+								/>
 							</svg>
 						</button>
 						{isMenuOpen && (
@@ -123,14 +142,28 @@ const Navbar = () => {
 								<div className='p-5 bg-white border rounded shadow-sm'>
 									<div className='flex items-center justify-between mb-4'>
 										<div>
-											<NavLink to='/' aria-label='Company' title='Company' className='inline-flex items-center'>
+											<NavLink
+												to='/'
+												aria-label='Company'
+												title='Company'
+												className='inline-flex items-center'
+											>
 												<span>
-													<img src='Images/logo.png' alt='logo' className='w-16 h-1/2' />
+													<img
+														src='Images/logo.png'
+														alt='logo'
+														className='w-16 h-1/2'
+													/>
 												</span>
-												<span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>eduCamp</span>
+												<span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>
+													eduCamp
+												</span>
 											</NavLink>
 										</div>
-										<div>
+										<div className='flex items-center space-x-2'>
+											<div className='mr-5'>
+												<input type='checkbox' className='toggle toggle-sm' />
+											</div>
 											<button
 												aria-label='Close Menu'
 												title='Close Menu'

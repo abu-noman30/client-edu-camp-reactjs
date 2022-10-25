@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
@@ -70,13 +71,13 @@ const Header = () => {
 						/>
 					</div>
 					<div className='flex items-center sm:justify-center'>
-						<a
-							href='/'
+						<Link
+							to='/courses'
 							className='inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-blue-900 transition duration-200 rounded shadow-md border-2 border-blue-900 bg-white hover:bg-blue-900 
             hover:text-white focus:shadow-outline focus:outline-none'
 						>
 							Learn More
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
