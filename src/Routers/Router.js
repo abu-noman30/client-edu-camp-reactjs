@@ -24,7 +24,14 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'courses',
-				element: <Courses />
+				element: <Courses />,
+				loader: async () => {
+					return await fetch('http://localhost:5000/all-courses');
+				}
+			},
+			{
+				path: 'details',
+				element: <CourseDetails />
 			},
 			{
 				path: 'login',
@@ -33,10 +40,6 @@ const router = createBrowserRouter([
 			{
 				path: 'register',
 				element: <Register />
-			},
-			{
-				path: 'details',
-				element: <CourseDetails />
 			}
 		]
 	}
