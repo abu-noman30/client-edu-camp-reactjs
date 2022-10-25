@@ -1,9 +1,7 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Carousel from '../../Components/Navbar/Carousel/Carousel';
 import Navbar from '../../Components/Navbar/Navbar';
+import Home from '../../Pages/Home/Home';
 import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 
 const Root = () => {
 	return (
@@ -13,10 +11,8 @@ const Root = () => {
 				<Navbar />
 			</div>
 			{/* Outlet Section */}
-			<div className='outlet-container'>
-				<Outlet />
-				<Carousel />
-				<Header />
+			<div className='home-section'>
+				<Home />
 			</div>
 			{/* Footer Section */}
 			<div className='footer-container'>
