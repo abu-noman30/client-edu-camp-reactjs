@@ -10,12 +10,12 @@ const Courses = () => {
 					{/* Sidebar Section */}
 					<div class=' w-full lg:w-[16rem] lg:fixed lg:left-16 h-80'>
 						<div class=' mt-4 col-span-12 md:col-span-2 lg:col-span-3 flex h-full flex-col justify-between rounded-xl bg-white p-8'>
-							<ul class='space-y-2'>
-								<li></li>
-								<li></li>
-								<li></li>
-								<li></li>
-								<li></li>
+							<ul class='space-y-2 list-decimal'>
+								<Link to='/courses'>
+									<li className='font-bold underline underline-offset-3 text-blue-700 hover:bg-slate-100 p-1 rounded'>
+										Android Development
+									</li>
+								</Link>
 							</ul>
 						</div>
 					</div>

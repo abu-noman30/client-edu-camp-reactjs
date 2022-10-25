@@ -1,4 +1,5 @@
 import React from 'react';
+import * as FAIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseDetails = () => {
@@ -7,8 +8,10 @@ const CourseDetails = () => {
 			{/* Course Details Container */}
 			<div className='course-details pt-16 bg-white '>
 				{/* Title Container */}
-				<div className='w-10/12 mx-auto px-4 flex items-center justify-between mb-5'>
-					<h1 className='text-3xl font-bold '>Android Development</h1>
+				<div className='w-10/12 mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between mb-5'>
+					<h1 className='text-3xl font-bold text-center lg:text-left mb-4 mt-4 mg:mt-0'>
+						Android Development
+					</h1>
 					<button class='flex items-center p-2 rounded bg-gray-700 hover:bg-gray-800 text-white border-blue-700 mx-1'>
 						<div class='mx-1'>
 							<svg
@@ -29,6 +32,8 @@ const CourseDetails = () => {
 						<span class='mx-2'>Print</span>
 					</button>
 				</div>
+
+				{/* Course Details */}
 				<div class='max-w-5xl overflow-hidden bg-gray-200 rounded-lg shadow-md w-10/11 mx-auto '>
 					<img
 						class='object-cover w-full h-64'
@@ -104,6 +109,18 @@ const CourseDetails = () => {
 							</div>
 						</div>
 					</div>
+				</div>
+
+				{/* Premium button */}
+				<div className='w-10/12 mx-auto px-4 flex items-center justify-center lg:justify-end mb-5 mt-10'>
+					<button class='px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80'>
+						<div className='flex items-center '>
+							<snap className='mr-2'>
+								<FAIcons.FaLock />
+							</snap>
+							<snap> Get Premium Access</snap>
+						</div>
+					</button>
 				</div>
 			</div>
 		</>
