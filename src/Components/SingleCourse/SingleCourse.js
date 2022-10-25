@@ -3,13 +3,13 @@ import * as FAIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCourse = (props) => {
-	const { name, student, img, description, instructor, rating } =
+	const { name, student, img, description, instructor, rating, id } =
 		props.singleCourse;
 	return (
 		<>
 			{/* Single Course Card Container */}
 			<div className=''>
-				<Link to='/details'>
+				<Link to={`/all-courses/${id}`}>
 					<div className='card w-full bg-base-100 shadow-xl shadow-gray-400'>
 						<figure className='p-1 rounded-lg'>
 							<img

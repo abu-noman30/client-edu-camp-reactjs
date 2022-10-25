@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 			{
 				path: 'all-courses/:id',
 				element: <CourseDetails />,
-				loader: async (params) => {
+				loader: async ({ params }) => {
 					return await fetch(`http://localhost:5000/all-courses/${params.id}`);
 				}
 			},

@@ -20,7 +20,7 @@ const Courses = () => {
 								{/* Single Courses */}
 								{loaderData.map((courseName, index) => (
 									<Link
-										to={`/all-courses/:${courseName.id}`}
+										to={`/all-courses/${courseName.id}`}
 										key={courseName.id}
 									>
 										<li className='font-bold underline underline-offset-3 text-blue-700 hover:bg-slate-100  px-2 rounded'>
