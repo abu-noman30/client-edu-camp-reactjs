@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Error = () => {
 	return (
-		<>
+		<div>
 			{/* Error Container */}
 			<div className='grid h-screen place-content-center bg-white'>
 				<div className='text-center'>
@@ -21,7 +21,7 @@ const Error = () => {
 					</Link>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

@@ -1,12 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Root from '../Layouts/Root/Root';
+import Courses from '../Pages/Courses/Courses';
 import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home';
+import React from 'react';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Root />,
+		element: <Root></Root>,
 		errorElement: <Error />,
 		Children: [
 			{
@@ -14,8 +16,12 @@ const router = createBrowserRouter([
 				element: <Home />
 			},
 			{
-				path: '/',
+				path: 'home',
 				element: <Home />
+			},
+			{
+				path: 'courses',
+				element: <Courses />
 			}
 		]
 	}

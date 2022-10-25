@@ -4,7 +4,7 @@ import Header from '../../Layouts/Header/Header';
 
 const Home = () => {
 	return (
-		<>
+		<div>
 			{/* Header Section */}
 			<div className=''>
 				<Header />
@@ -14,7 +14,7 @@ const Home = () => {
 			<div className='mt-10 shadow-lg'>
 				<Instructors />
 			</div>
-		</>
+		</div>
 	);
 };
 

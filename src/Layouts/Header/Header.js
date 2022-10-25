@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
 	return (
-		<>
+		<div>
 			{/* Header Container */}
 			<div className='bg-[url(https://img.freepik.com/premium-vector/abstract-modern-white-grey-gradient-geometric-pattern-background_120819-595.jpg?w=1060)] bg-no-repeat object-fill object-center mt-10 shadow-lg rounded-2xl'>
 				<div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 bg-ur bg-ur'>
@@ -68,7 +68,7 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

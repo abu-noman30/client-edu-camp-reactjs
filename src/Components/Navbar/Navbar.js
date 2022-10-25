@@ -17,12 +17,12 @@ const Navbar = () => {
 					<ul className='hidden items-center space-x-8 lg:flex'>
 						<li>
 							<NavLink
-								to='/'
-								aria-label='Our product'
-								title='Our product'
+								to='/home'
+								aria-label='Home'
+								title='Home'
 								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 							>
-								<span className='flex items-center justify-start'>
+								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2 '>
 									<span>
 										<FAIcons.FaHome className='mr-2' />
 									</span>
@@ -32,12 +32,12 @@ const Navbar = () => {
 						</li>
 						<li>
 							<NavLink
-								to='/'
-								aria-label='Our product'
-								title='Our product'
+								to='/courses'
+								aria-label='Courses'
+								title='Courses'
 								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 							>
-								<span className='flex items-center justify-start'>
+								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2'>
 									<span>
 										<FAIcons.FaBookReader className='mr-2' />
 									</span>
@@ -47,12 +47,12 @@ const Navbar = () => {
 						</li>
 						<li>
 							<NavLink
-								to='/'
-								aria-label='Product pricing'
-								title='Product pricing'
+								to='/blog'
+								aria-label='Blog'
+								title='Blog'
 								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 							>
-								<span className='flex items-center justify-start'>
+								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2'>
 									<span>
 										<FAIcons.FaCommentAlt className='mr-2' />
 									</span>
@@ -62,12 +62,12 @@ const Navbar = () => {
 						</li>
 						<li>
 							<NavLink
-								to='/'
-								aria-label='About us'
-								title='About us'
+								to='/faq'
+								aria-label='FAQ'
+								title='FAQ'
 								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 							>
-								<span className='flex items-center justify-start'>
+								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2 '>
 									<span>
 										<FAIcons.FaQuestion className='mr-2' />
 									</span>
@@ -79,17 +79,17 @@ const Navbar = () => {
 					<ul className='hidden items-center space-x-8 lg:flex'>
 						<li>
 							<NavLink
-								to='/'
+								to='/login'
 								className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
-								aria-label='Sign up'
-								title='Sign up'
+								aria-label='Login'
+								title='Login'
 							>
 								Login
 							</NavLink>
 						</li>
 						{/* Profile Container */}
 						<li>
-							<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-full'>
+							<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-full hover:bg-slate-100 hover:rounded-lg hover:p-2'>
 								{/* {!currentUser.email ? ( */}
 								<>
 									<FAIcons.FaUserLock />
@@ -150,9 +150,9 @@ const Navbar = () => {
 										<ul className='space-y-4 grid '>
 											<li>
 												<NavLink
-													to='/'
-													aria-label='Our product'
-													title='Our product'
+													to='/home'
+													aria-label='Home'
+													title='Home'
 													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 												>
 													<span className='flex items-center justify-start'>
@@ -165,9 +165,9 @@ const Navbar = () => {
 											</li>
 											<li>
 												<NavLink
-													to='/'
-													aria-label='Our product'
-													title='Our product'
+													to='/courses'
+													aria-label='Courses'
+													title='Courses'
 													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 												>
 													<span className='flex items-center justify-start'>
@@ -180,9 +180,9 @@ const Navbar = () => {
 											</li>
 											<li>
 												<NavLink
-													to='/'
-													aria-label='Product pricing'
-													title='Product pricing'
+													to='/blog'
+													aria-label='Blog'
+													title='Blog'
 													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 												>
 													<span className='flex items-center justify-start'>
@@ -195,9 +195,9 @@ const Navbar = () => {
 											</li>
 											<li>
 												<NavLink
-													to='/'
-													aria-label='About us'
-													title='About us'
+													to='/faq'
+													aria-label='FAQ'
+													title='FAQ'
 													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
 												>
 													<span className='flex items-center justify-start'>
