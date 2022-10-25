@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import SingleCourse from '../../Components/SingleCourse/SingleCourse';
 
 const Courses = () => {
 	const loaderData = useLoaderData();
-	console.log(loaderData);
+	// console.log(loaderData);
 	return (
 		<>
 			{/* Courses Container */}
@@ -17,8 +18,11 @@ const Courses = () => {
 									Available Courses:
 								</h2>
 								{/* Single Courses */}
-								{loaderData.map((courseName) => (
-									<Link to='/courses'>
+								{loaderData.map((courseName, index) => (
+									<Link
+										to={`/all-courses/:${courseName.id}`}
+										key={courseName.id}
+									>
 										<li className='font-bold underline underline-offset-3 text-blue-700 hover:bg-slate-100  px-2 rounded'>
 											{courseName.name}
 										</li>
@@ -30,99 +34,13 @@ const Courses = () => {
 					{/* Courses Section */}
 					<div className='lg:m-4 w-full lg:w-[58rem] lg:ml-[20rem] bg-white rounded-xl p-2 md:p-4 lg:p-8 md:py-8 px-2 md:px-8 '>
 						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-							{/* Course - 1 */}
-							<Link to='/details'>
-								<div className='card w-full bg-base-100 shadow-xl shadow-gray-400'>
-									<figure className='p-1 rounded-lg'>
-										<img
-											src='https://placeimg.com/400/225/arch'
-											alt='Shoes'
-											className='rounded-lg'
-										/>
-									</figure>
-									<div className='card-body'>
-										<h2 className='card-title -mt-7'>
-											Shoes!
-											<div className='badge badge-primary'>NEW</div>
-										</h2>
-										<p>Description</p>
-										<p>Instructor</p>
-										<div className='card-actions justify-evenly'>
-											<span>ratings</span>
-											<span>icons</span>
-											<span>student</span>
-										</div>
-									</div>
-								</div>
-							</Link>
-							{/* Course - 2 */}
-							<div className='card w-full bg-base-100 shadow-xl'>
-								<figure>
-									<img src='https://placeimg.com/400/225/arch' alt='Shoes' />
-								</figure>
-								<div className='card-body'>
-									<h2 className='card-title'>
-										Shoes!
-										<div className='badge badge-secondary'>NEW</div>
-									</h2>
-									<p>If a dog chews shoes whose shoes does he choose?</p>
-									<div className='card-actions justify-end'>
-										<div className='badge badge-outline'>Fashion</div>
-										<div className='badge badge-outline'>Products</div>
-									</div>
-								</div>
-							</div>
-							{/* Course - 3 */}
-							<div className='card w-full bg-base-100 shadow-xl'>
-								<figure>
-									<img src='https://placeimg.com/400/225/arch' alt='Shoes' />
-								</figure>
-								<div className='card-body'>
-									<h2 className='card-title'>
-										Shoes!
-										<div className='badge badge-secondary'>NEW</div>
-									</h2>
-									<p>If a dog chews shoes whose shoes does he choose?</p>
-									<div className='card-actions justify-end'>
-										<div className='badge badge-outline'>Fashion</div>
-										<div className='badge badge-outline'>Products</div>
-									</div>
-								</div>
-							</div>
-							{/* Course - 4 */}
-							<div className='card w-full bg-base-100 shadow-xl'>
-								<figure>
-									<img src='https://placeimg.com/400/225/arch' alt='Shoes' />
-								</figure>
-								<div className='card-body'>
-									<h2 className='card-title'>
-										Shoes!
-										<div className='badge badge-secondary'>NEW</div>
-									</h2>
-									<p>If a dog chews shoes whose shoes does he choose?</p>
-									<div className='card-actions justify-end'>
-										<div className='badge badge-outline'>Fashion</div>
-										<div className='badge badge-outline'>Products</div>
-									</div>
-								</div>
-							</div>
-							{/* Course - 5 */}
-							<div className='card w-full bg-base-100 shadow-xl'>
-								<figure>
-									<img src='https://placeimg.com/400/225/arch' alt='Shoes' />
-								</figure>
-								<div className='card-body'>
-									<h2 className='card-title'>
-										Shoes!
-										<div className='badge badge-secondary'>NEW</div>
-									</h2>
-									<p>If a dog chews shoes whose shoes does he choose?</p>
-									<div className='card-actions justify-end'>
-										<div className='badge badge-outline'>Fashion</div>
-										<div className='badge badge-outline'>Products</div>
-									</div>
-								</div>
-							</div>
+							{/* Course Cards - 1 */}
+							{loaderData.map((singleCourse) => (
+								<SingleCourse
+									key={singleCourse.id}
+									singleCourse={singleCourse}
+								/>
+							))}
 						</div>
 					</div>
 				</div>

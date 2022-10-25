@@ -30,8 +30,11 @@ const router = createBrowserRouter([
 				}
 			},
 			{
-				path: 'details',
-				element: <CourseDetails />
+				path: 'all-courses/:id',
+				element: <CourseDetails />,
+				loader: async (params) => {
+					return await fetch(`http://localhost:5000/all-courses/${params.id}`);
+				}
 			},
 			{
 				path: 'login',
