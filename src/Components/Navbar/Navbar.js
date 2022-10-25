@@ -160,9 +160,9 @@ const Navbar = () => {
 												</span>
 											</NavLink>
 										</div>
-										<div className='flex items-center space-x-2'>
-											<div className='mr-5'>
-												<input type='checkbox' className='toggle toggle-sm' />
+										<div className='flex items-center justify-end'>
+											<div className=''>
+												<input type='checkbox' className='toggle toggle-sm ' />
 											</div>
 											<button
 												aria-label='Close Menu'
