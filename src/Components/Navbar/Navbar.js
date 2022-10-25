@@ -7,7 +7,7 @@ const Navbar = () => {
 	return (
 		<>
 			<div className='px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
-				<div className='relative flex items-center justify-between '>
+				<div className='relative flex items-center justify-between z-2'>
 					<NavLink to='/' aria-label='eduCamp' title='Company' className='inline-flex items-center'>
 						<span>
 							<img src='Images/logo.png' alt='logo' className='w-14 h-14' />
@@ -119,7 +119,7 @@ const Navbar = () => {
 							</svg>
 						</button>
 						{isMenuOpen && (
-							<div className='absolute top-0 left-0 w-full'>
+							<div className='absolute top-0 left-0 w-full z-10'>
 								<div className='p-5 bg-white border rounded shadow-sm'>
 									<div className='flex items-center justify-between mb-4'>
 										<div>

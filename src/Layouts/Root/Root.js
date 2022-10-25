@@ -15,7 +15,7 @@ const Root = () => {
 				<Home />
 			</div>
 			{/* Footer Section */}
-			<div className='footer-container'>
+			<div className='footer-container mt-10 bg-[url(https://img.freepik.com/premium-vector/abstract-modern-white-grey-gradient-geometric-pattern-background_120819-595.jpg?w=1060)]'>
 				<Footer />
 			</div>
 		</>
