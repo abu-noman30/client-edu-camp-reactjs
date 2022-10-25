@@ -80,7 +80,7 @@ const Navbar = () => {
 						<li>
 							<NavLink
 								to='/'
-								className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none'
+								className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
 								aria-label='Sign up'
 								title='Sign up'
 							>
@@ -212,7 +212,7 @@ const Navbar = () => {
 											<li>
 												<NavLink
 													to='/login'
-													className='inline-flex text-white items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none'
+													className='inline-flex text-white items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
 													aria-label='Login'
 													title='Login'
 												>
@@ -245,23 +245,6 @@ const Navbar = () => {
 					</div>
 				</div>
 			</div>
-
-			{/* <div classNameName=''>
-								<Button classNameName='btn btn-light border-2 border-dark'>
-									{!currentUser.email ? (
-										<>
-											<CGIcons.CgProfile />
-										</>
-									) : (
-										<>
-											<NavLink to='/user/profile' classNameName='nav-link'>
-												<img src={currentUser.photoURL} alt='' classNameName='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
-												<span>{currentUser.displayName}</span>
-											</NavLink>
-										</>
-									)}
-								</Button>
-							</div> */}
 		</>
 	);
 };
