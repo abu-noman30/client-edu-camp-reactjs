@@ -3,11 +3,14 @@ import { createBrowserRouter } from 'react-router-dom';
 import CheckList from '../Components/CheckList/CheckList';
 import CourseDetails from '../Components/CourseDetails/CourseDetails';
 import Root from '../Layouts/Root/Root';
+import Blog from '../Pages/Blog/Blog';
 import Courses from '../Pages/Courses/Courses';
 import Error from '../Pages/Error/Error';
+import Faq from '../Pages/Faq/Faq';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import PrivateRoute from './Private/PrivateRouter';
 
 const router = createBrowserRouter([
 	{
@@ -39,12 +42,22 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'course-enroll/:id',
-				element: <CheckList />,
+				element: (
+					<PrivateRoute>
+						<CheckList />
+					</PrivateRoute>
+				),
 				loader: async ({ params }) => {
-					return await fetch(
-						`http://localhost:5000/course-enroll/${params.id}`
-					);
+					return await fetch(`http://localhost:5000/course-enroll/${params.id}`);
 				}
+			},
+			{
+				path: 'blog',
+				element: <Blog />
+			},
+			{
+				path: 'faq',
+				element: <Faq />
 			},
 			{
 				path: 'login',

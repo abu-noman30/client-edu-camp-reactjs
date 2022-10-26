@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/Firebase.config';
 
@@ -58,6 +58,14 @@ const AuthContextAPI = ({ children }) => {
 		return signInWithPopup(auth, googleProvider);
 	};
 
+	// Github Sign In Method
+	const githubProvider = new GithubAuthProvider();
+
+	const methodGithubSignIn = () => {
+		setLoading(true);
+		return signInWithPopup(auth, githubProvider);
+	};
+
 	// get the current user is by setting an observer on the Auth object, and adding a callback that gets called whenever the user's sign-in state changes.
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -84,7 +92,8 @@ const AuthContextAPI = ({ children }) => {
 		methodUpdateProfile,
 		methodSendEmailVerification,
 		methodSendPasswordResetEmail,
-		methodGoogleSignIn
+		methodGoogleSignIn,
+		methodGithubSignIn
 	};
 	return (
 		<>

@@ -226,10 +226,7 @@ const Register = () => {
 									</label>
 								</div>
 
-								<button
-									className='w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-gray-900 shadow-md hover:text-whi hover:bg-black focus:outline-none focus:ring-2 rounded-md'
-									disabled={isDisabled}
-								>
+								<button className='w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-gray-900 shadow-md hover:text-whi hover:bg-black focus:outline-none focus:ring-2 rounded-md' disabled={isDisabled}>
 									<span className='w-full'>Submit</span>
 								</button>
 							</form>
