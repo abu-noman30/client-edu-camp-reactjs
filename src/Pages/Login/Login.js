@@ -39,7 +39,6 @@ const Login = () => {
 					}
 				} else {
 					toast.error('Please verify your Email!');
-					navigate('/login');
 					handlerOnLogout();
 				}
 				console.log(user);
@@ -85,8 +84,7 @@ const Login = () => {
 						navigate(from, { replace: true });
 					}
 				} else {
-					toast.error('Please verify your Email!');
-					navigate('/login');
+					toast.error('Please verify your Email! A verification link has been sent to your email.');
 					handlerOnLogout();
 				}
 				console.log(user);
@@ -116,8 +114,7 @@ const Login = () => {
 						navigate(from, { replace: true });
 					}
 				} else {
-					toast.error('Please verify your Email!');
-					navigate('/login');
+					toast.error('Please verify your Email! A verification link has been sent to your email.');
 					handlerOnLogout();
 				}
 
