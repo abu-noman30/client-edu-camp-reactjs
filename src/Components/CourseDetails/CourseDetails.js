@@ -41,19 +41,9 @@ const CourseDetails = () => {
 						// scale={0.8}
 					>
 						{({ toPdf }) => (
-							<button
-								className='flex items-center p-2 rounded bg-gray-700 hover:bg-gray-800 text-white border-blue-700 mx-1'
-								onClick={toPdf}
-							>
+							<button className='flex items-center p-2 rounded bg-gray-700 hover:bg-gray-800 text-white border-blue-700 mx-1' onClick={toPdf}>
 								<div className='mx-1'>
-									<svg
-										xmlns='http://www.w3.org/2000/svg'
-										className='h-4 w-4'
-										fill='none'
-										viewBox='0 0 24 24'
-										stroke='currentColor'
-										strokeWidth='2'
-									>
+									<svg xmlns='http://www.w3.org/2000/svg' className='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2'>
 										<path
 											strokeLinecap='round'
 											strokeLinejoin='round'
@@ -69,15 +59,8 @@ const CourseDetails = () => {
 
 				{/* Course Details */}
 
-				<div
-					ref={targetRef}
-					className='max-w-5xl overflow-hidden bg-gray-200 rounded-lg shadow-md w-10/11 mx-auto '
-				>
-					<img
-						className='object-fill w-full h-[200px] sm:h-[300px] lg:h-[400px] xl:h-[500px]'
-						src={thumbnail_url}
-						alt='CourseDetails'
-					/>
+				<div ref={targetRef} className='max-w-5xl overflow-hidden bg-gray-200 rounded-lg shadow-md w-10/11 mx-auto '>
+					<img className='object-fill w-full h-[200px] sm:h-[300px] lg:h-[400px] xl:h-[500px]' src={thumbnail_url} alt='CourseDetails' />
 
 					<div className='p-6'>
 						<h1 className='text-3xl font-bold text-center lg:text-left mb-4 mt-4 mg:mt-0'>
@@ -85,28 +68,17 @@ const CourseDetails = () => {
 							{course_name}
 						</h1>
 						<div>
-							<span className='text-xs font-medium text-blue-600  '>
-								What we will learn?
-							</span>
+							<span className='text-xs font-medium text-blue-600  '>What we will learn?</span>
 							<p className='mt-2 text-md text-gray-600 '>{will_learn}</p>
-							<h2 className='block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform  hover:text-gray-600 hover:underline'>
-								Description:
-							</h2>
-							<p className='mt-2 text-sm text-gray-600 break-all '>
-								{course_description}
-							</p>
+							<h2 className='block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform  hover:text-gray-600 hover:underline'>Description:</h2>
+							<p className='mt-2 text-sm text-gray-600 break-all '>{course_description}</p>
 						</div>
 
 						<div className=''>
-							<h2 className='block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform  hover:text-gray-600 hover:underline mb-4'>
-								Requirements:
-							</h2>
+							<h2 className='block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform  hover:text-gray-600 hover:underline mb-4'>Requirements:</h2>
 							<ul className='pl-4'>
 								{requirements.map((requirement, index) => (
-									<li
-										className='text-sm text-gray-600 list-decimal font-semibold '
-										key={index}
-									>
+									<li className='text-sm text-gray-600 list-decimal font-semibold ' key={index}>
 										{requirement}
 									</li>
 								))}
@@ -115,22 +87,11 @@ const CourseDetails = () => {
 						<div className='mt-4'>
 							<div className='flex items-center justify-between'>
 								<div className='flex items-center'>
-									<img
-										className='object-cover h-10 rounded-full'
-										src='https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60'
-										alt='Avatar'
-									/>
-									<Link
-										to='/'
-										className='mx-2 font-semibold text-gray-700 '
-										tabIndex='0'
-										role='link'
-									>
+									<img className='object-cover h-10 rounded-full' src='https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60' alt='Avatar' />
+									<Link to='/' className='mx-2 font-semibold text-gray-700 ' tabIndex='0' role='link'>
 										{name}
 									</Link>
-									<span className='mx-1 text-xs text-gray-600 '>
-										{published_date}
-									</span>
+									<span className='mx-1 text-xs text-gray-600 '>{published_date}</span>
 								</div>
 								<p>
 									<span className='font-bold underline '>Duration:</span>
