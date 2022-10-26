@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import CheckList from '../Components/CheckList/CheckList';
 import CourseDetails from '../Components/CourseDetails/CourseDetails';
 import Root from '../Layouts/Root/Root';
 import Courses from '../Pages/Courses/Courses';
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
 				element: <CourseDetails />,
 				loader: async ({ params }) => {
 					return await fetch(`http://localhost:5000/all-courses/${params.id}`);
+				}
+			},
+			{
+				path: 'course-enroll/:id',
+				element: <CheckList />,
+				loader: async ({ params }) => {
+					return await fetch(
+						`http://localhost:5000/course-enroll/${params.id}`
+					);
 				}
 			},
 			{

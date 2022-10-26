@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import * as FAIcons from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import ReactToPdf from 'react-to-pdf';
+
+const targetRef = createRef();
+
+const options = {
+	// orientation: 'landscape',
+	// unit: 'in',
+	// format: [8.5]
+};
 
 const CourseDetails = () => {
 	const loaderData = useLoaderData();
@@ -10,7 +19,8 @@ const CourseDetails = () => {
 		instructor: { name, published_date, course_duration },
 		will_learn,
 		course_description,
-		requirements
+		requirements,
+		_id
 	} = loaderData;
 	return (
 		<>
@@ -22,29 +32,47 @@ const CourseDetails = () => {
 						<FAIcons.FaUserGraduate />
 						{course_name}
 					</h1>
-					<button className='flex items-center p-2 rounded bg-gray-700 hover:bg-gray-800 text-white border-blue-700 mx-1'>
-						<div className='mx-1'>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								className='h-4 w-4'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-								strokeWidth='2'
+					<ReactToPdf
+						targetRef={targetRef}
+						filename={`${course_name}_details.pdf`}
+						options={options}
+						// x={0.5}
+						// y={0.5}
+						// scale={0.8}
+					>
+						{({ toPdf }) => (
+							<button
+								className='flex items-center p-2 rounded bg-gray-700 hover:bg-gray-800 text-white border-blue-700 mx-1'
+								onClick={toPdf}
 							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									d='M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z'
-								></path>
-							</svg>
-						</div>
-						<span className='mx-2'>Print</span>
-					</button>
+								<div className='mx-1'>
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										className='h-4 w-4'
+										fill='none'
+										viewBox='0 0 24 24'
+										stroke='currentColor'
+										strokeWidth='2'
+									>
+										<path
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											d='M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z'
+										></path>
+									</svg>
+								</div>
+								<span className='mx-2'>Print</span>
+							</button>
+						)}
+					</ReactToPdf>
 				</div>
 
 				{/* Course Details */}
-				<div className='max-w-5xl overflow-hidden bg-gray-200 rounded-lg shadow-md w-10/11 mx-auto '>
+
+				<div
+					ref={targetRef}
+					className='max-w-5xl overflow-hidden bg-gray-200 rounded-lg shadow-md w-10/11 mx-auto '
+				>
 					<img
 						className='object-fill w-full h-[200px] sm:h-[300px] lg:h-[400px] xl:h-[500px]'
 						src={thumbnail_url}
@@ -52,6 +80,10 @@ const CourseDetails = () => {
 					/>
 
 					<div className='p-6'>
+						<h1 className='text-3xl font-bold text-center lg:text-left mb-4 mt-4 mg:mt-0'>
+							<FAIcons.FaUserGraduate />
+							{course_name}
+						</h1>
 						<div>
 							<span className='text-xs font-medium text-blue-600  '>
 								What we will learn?
@@ -71,7 +103,10 @@ const CourseDetails = () => {
 							</h2>
 							<ul className='pl-4'>
 								{requirements.map((requirement, index) => (
-									<li className='text-sm text-gray-600 list-decimal font-semibold '>
+									<li
+										className='text-sm text-gray-600 list-decimal font-semibold '
+										key={index}
+									>
 										{requirement}
 									</li>
 								))}
@@ -98,7 +133,8 @@ const CourseDetails = () => {
 									</span>
 								</div>
 								<p>
-									<span>{course_duration}</span>
+									<span className='font-bold underline '>Duration:</span>
+									<span className='font-bold'> {course_duration}</span>
 								</p>
 							</div>
 						</div>
@@ -107,14 +143,16 @@ const CourseDetails = () => {
 
 				{/* Premium button */}
 				<div className='w-10/12 mx-auto px-4 flex items-center justify-center lg:justify-end mb-5 mt-10'>
-					<button className='px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80'>
-						<div className='flex items-center '>
-							<span className='mr-2'>
-								<FAIcons.FaLock />
-							</span>
-							<span> Get Premium Access</span>
-						</div>
-					</button>
+					<Link to={`/course-enroll/${_id}`}>
+						<button className='px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80'>
+							<div className='flex items-center '>
+								<span className='mr-2'>
+									<FAIcons.FaLock />
+								</span>
+								<span> Get Premium Access</span>
+							</div>
+						</button>
+					</Link>
 				</div>
 			</div>
 		</>

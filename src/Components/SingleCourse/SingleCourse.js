@@ -30,7 +30,10 @@ const SingleCourse = (props) => {
 								{instructor}
 							</p>
 							<div className='card-actions justify-between'>
-								<span className='font-bold text-red-700'>{rating}</span>
+								<span className='font-bold text-red-700 flex items-center'>
+									<FAIcons.FaAngellist />
+									{rating}
+								</span>
 								<span className='font-semibold flex items-center gap-1'>
 									<FAIcons.FaUsers />({student})
 								</span>
