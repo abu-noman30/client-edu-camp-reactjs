@@ -30,7 +30,7 @@ const Login = () => {
 				form.reset();
 				setError('');
 				if (user.emailVerified === true) {
-					if (from === '/') {
+					if (from === '/' || from === '/home') {
 						toast.success('Login Successful');
 						navigate('/home');
 					} else {
@@ -77,9 +77,9 @@ const Login = () => {
 				// This gives you a Google Access Token. You can use it to access the Google API.
 				const user = result.user;
 				if (user.emailVerified === true) {
-					if (from === '/') {
+					if (from === '/' || from === '/home') {
 						toast.success('Login Successful');
-						navigate('/home');
+						navigate('/');
 					} else {
 						toast.success('Login Successful');
 						navigate(from, { replace: true });
@@ -108,12 +108,17 @@ const Login = () => {
 				// This gives you a GitHub Access Token. You can use it to access the GitHub API.
 				const user = result.user;
 				if (user.emailVerified === true) {
-					navigate('/');
+					if (from === '/' || from === '/home') {
+						toast.success('Login Successful');
+						navigate('/');
+					} else {
+						toast.success('Login Successful');
+						navigate(from, { replace: true });
+					}
 				} else {
-					handlerVerifyEmail();
+					toast.error('Please verify your Email!');
 					navigate('/login');
 					handlerOnLogout();
-					toast.error('Please verify your Email! We have sent you a verification email.');
 				}
 
 				console.log(user);
