@@ -240,10 +240,10 @@ const Register = () => {
 							</div>
 						</div>
 					</div>
-					<div className='w-1/2 h-[35rem] shadow-2xl hidden lg:block lg:mb-8'>
+					<div className='w-1/2 h-[35rem] shadow-2xl hidden lg:block lg:mb-4'>
 						<img
-							className=' object-cover w-full h-screen '
-							src='https://img.freepik.com/free-photo/registration-application-paper-form-concept_53876-167141.jpg?w=740&t=st=1666864590~exp=1666865190~hmac=adde163362de4753306649cea07308e46a8c21b41453e365690869bb695b7fd6'
+							className=' object-cover w-full h-5/6 '
+							src='https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?w=740&t=st=1666865740~exp=1666866340~hmac=ce48ae951d91280e21e07b456cd09f204c4b592e6ebf770d9e7086a252b59533'
 							alt='Register'
 						/>
 					</div>

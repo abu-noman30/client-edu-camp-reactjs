@@ -155,7 +155,7 @@ const Login = () => {
 			{/* Login Container */}
 			<div className='pt-24'>
 				<div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-xl  lg:max-w-4xl'>
-					<div className='hidden bg-cover lg:block lg:w-1/2 bg-[url(https://imagevars.gulfnews.com/2021/04/23/Cyber-security_178fd6db0ab_medium.jpg)]'></div>
+					<div className='hidden bg-cover lg:block lg:w-1/2 bg-[url(https://img.freepik.com/free-vector/account-concept-illustration_114360-399.jpg?w=740&t=st=1666865503~exp=1666866103~hmac=50800489710ade095fbf25d28a2dafb14272e2859f24b3c00efc5fc8f0e25184)]'></div>
 
 					<div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
 						<div className='flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow-md shadow-slate-300  sm:px-6 md:px-8 lg:px-10'>
