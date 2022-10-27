@@ -129,10 +129,10 @@ const Register = () => {
 	return (
 		<>
 			{/* Registration Page Container */}
-			<div className='registration-container pt-16'>
-				<div className='flex flex-wrap w-full'>
-					<div className='flex flex-col w-full md:w-1/2'>
-						<div className='flex justify-center pt-12 md:justify-start md:pl-12 md:-mb-24'>
+			<div className='registration-container pt-16 '>
+				<div className='flex flex-wrap w-11/12 mx-auto'>
+					<div className='flex flex-col w-full lg:w-1/2'>
+						<div className='flex justify-center pt-12 md:justify-start md:pl-12 md:-mb-20'>
 							<Link to='/register' className='p-4 text-xl font-bold text-white bg-gray-900'>
 								Register.
 							</Link>
@@ -240,8 +240,12 @@ const Register = () => {
 							</div>
 						</div>
 					</div>
-					<div className='w-1/2 shadow-2xl'>
-						<img className='hidden object-cover w-full h-screen md:block' src='/images/object/9.jpg' alt='Login' />
+					<div className='w-1/2 h-[35rem] shadow-2xl hidden lg:block lg:mb-8'>
+						<img
+							className=' object-cover w-full h-screen '
+							src='https://img.freepik.com/free-photo/registration-application-paper-form-concept_53876-167141.jpg?w=740&t=st=1666864590~exp=1666865190~hmac=adde163362de4753306649cea07308e46a8c21b41453e365690869bb695b7fd6'
+							alt='Register'
+						/>
 					</div>
 				</div>
 			</div>
