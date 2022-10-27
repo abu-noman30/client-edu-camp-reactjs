@@ -103,24 +103,21 @@ const Navbar = () => {
 							)}
 						</li>
 						{/* Profile Container */}
-						<li>
-							<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2' title={currentUser.displayName}>
-								{!currentUser?.emailVerified ? (
-									<>
-										<FAIcons.FaUserLock />
-									</>
-								) : (
-									<>
-										<NavLink to='/' className='nav-link'>
-											<div className='flex'>
-												<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
-												<span className='ml-1'>{currentUser.displayName}</span>
-											</div>
-										</NavLink>
-									</>
-								)}
-							</button>
-						</li>
+						{currentUser?.emailVerified ? (
+							<NavLink to='/' className='nav-link'>
+								<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
+									<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
+										<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
+									</button>
+								</li>
+							</NavLink>
+						) : (
+							<li>
+								<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
+									<FAIcons.FaUserLock />
+								</button>
+							</li>
+						)}
 					</ul>
 					<div className='lg:hidden'>
 						<button aria-label='Open Menu' title='Open Menu' className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50' onClick={() => setIsMenuOpen(true)}>
@@ -146,8 +143,13 @@ const Navbar = () => {
 											<div className=''>
 												<input type='checkbox' className='toggle toggle-sm ' />
 											</div>
-											<button aria-label='Close Menu' title='Close Menu' className='p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline' onClick={() => setIsMenuOpen(false)}>
-												<svg className='w-5 text-gray-600' viewBox='0 0 24 24'>
+											<button
+												aria-label='Close Menu'
+												title='Close Menu'
+												className='p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline ml-4 md:ml-16'
+												onClick={() => setIsMenuOpen(false)}
+											>
+												<svg className='w-5 text-gray-600 ' viewBox='0 0 24 24'>
 													<path
 														fill='currentColor'
 														d='M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z'
@@ -200,32 +202,51 @@ const Navbar = () => {
 											</li>
 
 											<li>
-												<NavLink
-													to='/login'
-													className='inline-flex text-white items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
-													aria-label='Login'
-													title='Login'
-												>
-													Login
-												</NavLink>
+												{currentUser?.emailVerified ? (
+													<>
+														<NavLink to='/login'>
+															<button
+																className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none w-full md:w-1/2 md:block mx-auto'
+																aria-label='Login'
+																title='Login'
+																onClick={() => {
+																	handlerOnLogout();
+																}}
+															>
+																LOGOUT
+															</button>
+														</NavLink>
+													</>
+												) : (
+													<>
+														<NavLink
+															to='/login'
+															className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
+															aria-label='Login'
+															title='Login'
+														>
+															Login
+														</NavLink>
+													</>
+												)}
 											</li>
 											<div className='flex items-center justify-center'>
-												<li>
-													<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg' title={currentUser.displayName}>
-														{!currentUser?.emailVerified ? (
-															<>
-																<FAIcons.FaUserLock />
-															</>
-														) : (
-															<>
-																<div className='flex'>
-																	<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
-																	<span className='ml-1'>{currentUser.displayName}</span>
-																</div>
-															</>
-														)}
-													</button>
-												</li>
+												{/* sm - profile container */}
+												{currentUser?.emailVerified ? (
+													<NavLink to='/' className='nav-link'>
+														<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
+															<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
+																<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
+															</button>
+														</li>
+													</NavLink>
+												) : (
+													<li>
+														<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
+															<FAIcons.FaUserLock />
+														</button>
+													</li>
+												)}
 											</div>
 										</ul>
 									</nav>

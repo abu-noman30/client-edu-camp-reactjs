@@ -30,14 +30,14 @@ const router = createBrowserRouter([
 				path: 'courses',
 				element: <Courses />,
 				loader: async () => {
-					return await fetch('http://localhost:5000/all-courses');
+					return await fetch('https://server-edu-camp-reactjs.vercel.app/all-courses');
 				}
 			},
 			{
 				path: 'all-courses/:id',
 				element: <CourseDetails />,
 				loader: async ({ params }) => {
-					return await fetch(`http://localhost:5000/all-courses/${params.id}`);
+					return await fetch(`https://server-edu-camp-reactjs.vercel.app/all-courses/${params.id}`);
 				}
 			},
 			{
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: async ({ params }) => {
-					return await fetch(`http://localhost:5000/course-enroll/${params.id}`);
+					return await fetch(`https://server-edu-camp-reactjs.vercel.app/course-enroll/${params.id}`);
 				}
 			},
 			{

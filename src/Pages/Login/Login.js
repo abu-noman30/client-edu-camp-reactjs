@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FbaseAuthContext } from '../../Context/AuthContextAPI';
 
 const Login = () => {
-	const { methodSignIn, methodGoogleSignIn, methodSignOut, methodGithubSignIn, methodSendEmailVerification } = useContext(FbaseAuthContext);
+	const { methodSignIn, methodGoogleSignIn, methodSignOut, methodGithubSignIn } = useContext(FbaseAuthContext);
 	const [error, setError] = useState('');
 	// const [resetEmail, setResetEmail] = useState('');
 	const navigate = useNavigate();
@@ -55,6 +55,7 @@ const Login = () => {
 	};
 
 	// Reset Password using email------
+
 	// console.log(resetEmail);
 	// const handlerResetPassword = (resetEmail) => {
 	// 	methodSendPasswordResetEmail(resetEmail)
@@ -128,13 +129,6 @@ const Login = () => {
 				console.error(error);
 				// ...
 			});
-	};
-	// Email verification
-	const handlerVerifyEmail = () => {
-		methodSendEmailVerification().then(() => {
-			// Email verification sent!
-			// ...
-		});
 	};
 
 	// User logout
