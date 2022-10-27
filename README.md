@@ -16,6 +16,7 @@
 8. System is Fully Authenticate By "Google Firebase Authentication".
 9. There are also "Blog" and "FAQ" page. From there user can find related Questions about the website.
 10. System is fully responsive.
+11. All Data's are created and hosted on "vercel".
 #
 
 ## Technology Uses (Frameworks, libraries):
@@ -34,8 +35,8 @@
 7. sweetalert2
 #
 ## Deploy:
-1. Vercel (Server Site)
-2. Firebase (Client Site)
+1. Vercel (Server Side)
+2. Firebase (Client Side)
 #
 
 ## App Demo:
