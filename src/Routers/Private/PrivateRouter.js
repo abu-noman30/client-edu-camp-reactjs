@@ -20,7 +20,7 @@ const PrivateRoute = ({ children }) => {
 		);
 	}
 
-	if (currentUser && currentUser.emailVerified === true) {
+	if (currentUser && currentUser.uid) {
 		console.log(currentUser);
 		return children;
 	} else {

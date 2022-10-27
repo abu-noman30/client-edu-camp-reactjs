@@ -3,8 +3,7 @@ import * as FAIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCourse = (props) => {
-	const { name, student, img, description, instructor, rating, id } =
-		props.singleCourse;
+	const { name, student, img, description, instructor, rating, id } = props.singleCourse;
 	return (
 		<>
 			{/* Single Course Card Container */}
@@ -12,19 +11,11 @@ const SingleCourse = (props) => {
 				<Link to={`/all-courses/${id}`}>
 					<div className='card w-full bg-base-100 shadow-xl shadow-gray-400'>
 						<figure className='p-1 rounded-lg'>
-							<img
-								src={img}
-								alt='CourseImage'
-								className='rounded-lg w-full h-[10rem]'
-							/>
+							<img src={img} alt='CourseImage' className='rounded-lg w-full h-[10rem]' />
 						</figure>
 						<div className='card-body px-4'>
 							<h2 className='card-title -mt-7'>{name}</h2>
-							<p className='break-all'>
-								{description.length > 120
-									? description.slice(0, 120) + '...more'
-									: description}
-							</p>
+							<p className='break-all'>{description.length > 120 ? description.slice(0, 120) + '...more' : description}</p>
 							<p className='font-semibold flex items-center gap-1'>
 								<FAIcons.FaUserTie />
 								{instructor}

@@ -30,7 +30,7 @@ const Login = () => {
 				const user = userCredential.user;
 				form.reset();
 				setError('');
-				if (user.emailVerified === true) {
+				if (user && user.uid) {
 					if (from === '/' || from === '/home') {
 						toast.success('Login Successful');
 						navigate('/home');
@@ -84,7 +84,7 @@ const Login = () => {
 			.then((result) => {
 				// This gives you a Google Access Token. You can use it to access the Google API.
 				const user = result.user;
-				if (user.emailVerified === true) {
+				if (user && user.uid === true) {
 					if (from === '/' || from === '/home') {
 						toast.success('Login Successful');
 						navigate('/');
@@ -114,7 +114,7 @@ const Login = () => {
 			.then((result) => {
 				// This gives you a GitHub Access Token. You can use it to access the GitHub API.
 				const user = result.user;
-				if (user.emailVerified === true) {
+				if (user && user.uid) {
 					if (from === '/' || from === '/home') {
 						toast.success('Login Successful');
 						navigate('/');
@@ -283,7 +283,7 @@ const Login = () => {
 						</div>
 
 						<button
-							class='py-2 px-6 rounded bg-blue-700 hover:bg-blue-600 text-white border-blue-800 mx-1'
+							className='py-2 px-6 rounded bg-blue-700 hover:bg-blue-600 text-white border-blue-800 mx-1'
 							onClick={() => {
 								handlerResetPassword();
 							}}

@@ -116,7 +116,7 @@ const Navbar = () => {
 							/>
 						</li>
 						<li>
-							{currentUser?.emailVerified ? (
+							{currentUser && currentUser.uid ? (
 								<>
 									<NavLink to='/login'>
 										<button
@@ -145,7 +145,7 @@ const Navbar = () => {
 							)}
 						</li>
 						{/* Profile Container */}
-						{currentUser?.emailVerified ? (
+						{currentUser && currentUser.uid ? (
 							<NavLink to='/profile' className='nav-link'>
 								<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
 									<button className='border-2 border-blue-900 border-spacing-2 p-1 rounded-sm hover:bg-slate-100  hover:rounded-md'>
@@ -285,7 +285,7 @@ const Navbar = () => {
 											</li>
 
 											<li>
-												{currentUser?.emailVerified ? (
+												{currentUser && currentUser.uid ? (
 													<>
 														<NavLink to='/login'>
 															<button
@@ -316,7 +316,7 @@ const Navbar = () => {
 											</li>
 											<div className='flex items-center justify-center'>
 												{/* sm - profile container */}
-												{currentUser?.emailVerified ? (
+												{currentUser && currentUser.uid ? (
 													<NavLink to='/profile' className='nav-link'>
 														<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
 															<button className='border-2 border-blue-900 border-spacing-2 p-1 rounded-sm hover:bg-slate-100 hover:rounded-md '>

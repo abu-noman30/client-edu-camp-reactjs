@@ -24,7 +24,7 @@ const Profile = () => {
 										<span className='text-gray-600'>Email: </span>
 										<span className='link'>{currentUser.email}</span>
 									</p>
-									{currentUser.emailVerified === true && <p className='mt-4 text-red-800'>Verified</p>}
+									{currentUser?.emailVerified === true ? <p className='mt-4 text-red-800'>Verified Email</p> : <p className='mt-4 text-red-800'>Unverified Email</p>}
 								</div>
 							</div>
 						</div>

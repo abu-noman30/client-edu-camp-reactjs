@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FbaseAuthContext } from '../../Context/AuthContextAPI';
 
 const Register = () => {
-	const { methodCreateUser, methodUpdateProfile, methodSendEmailVerification, methodSignOut } = useContext(FbaseAuthContext);
+	const { methodCreateUser, methodUpdateProfile, methodSignOut } = useContext(FbaseAuthContext);
 	const [error, setError] = useState('');
 	const [isDisabled, setIsDisabled] = useState(true);
 
@@ -30,9 +30,11 @@ const Register = () => {
 					const user = userCredential.user;
 					// Signout user for firebase default behavior of auto login after signup termianted
 					handlerOnLogout();
-					// 2. for updating user profile---------
+					//  for updating user profile---------
 					handlerUpdateProfile(fullname, photoUrl);
-					handlerVerifyEmail();
+
+					// for sending email verification
+					// handlerVerifyEmail();
 					// ------------------------------------
 
 					form.reset();
@@ -62,12 +64,13 @@ const Register = () => {
 			});
 	};
 	// Email verification
-	const handlerVerifyEmail = () => {
-		methodSendEmailVerification().then(() => {
-			// Email verification sent!
-			// ...
-		});
-	};
+	// const handlerVerifyEmail = () => {
+	// 	methodSendEmailVerification().then(() => {
+	// 		// Email verification sent!
+	// 		// ...
+	// 	});
+	// };
+
 	//  for updating the user profile
 	const handlerUpdateProfile = (fullname, photoUrl) => {
 		methodUpdateProfile(fullname, photoUrl)
