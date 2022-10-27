@@ -7,24 +7,34 @@
 ## Description:
 
 1. A web base application (ReactJs).
-2. Users can attened the quizes base on select Topics.
-3. At Quiz page for the wrong answer....system will show the answer is Incorrect!, and for right answer it will show... Answer is Correct!.
-4. At Statistics page system will show the topic Wise Total Question's Graph Chart.
-5. At Blog Page, system will show some Questions and related Answers.
+2. Users can visit the "Courses" page for find Available Courses.
+3. On Selecting the specific course system will redirect to the "Course Details" Page.
+4. At the "Course Details" Page user can Download the full Course Details as PDF Format.
+5. By Selecting the "Get Premium Access" system will redirect the user to the Enrollment Page if the user is already Loged in, Other wise system will re direct the user to the "Login" Page.
+6. If the user is not registered, then user can go to the "Registration" page by clicking "signup" for registration.
+7. By clicking "Profile" icon user can view the profile details if the user is Loged in.
+8. System is Fully Authenticate By "Google Firebase Authentication".
+9. There are also "Blog" and "FAQ" page. From there user can find related Questions about the website.
 #
 
-## Technologi Uses (frameworks, libraries):
+## Technology Uses (Frameworks, libraries):
 
-1.
-2.
-3.
-4.
+##### Frameworks:
+1. Tailwind CSS.
+2. react-router-dom
+
+##### Libraries:
+1. React JS
+2. Daisy UI
+3. react-hot-toast
+4. react-icons
+5. react-spinners
+6. react-to-pdf
+7. sweetalert2
 #
-
 ## Deploy:
-
-1.
-2.
+1. Vercel (Server Site)
+2. Firebase (Client Site)
 #
 
 ## App Demo:
@@ -71,7 +81,7 @@
 ![App Screenshot](public/Images/Website_Screenshot_3.png)
 
 ##
-### 7. Enrollment (Premium Access):
+### 8. Enrollment (Premium Access):
 ##
 
 ![App Screenshot](public/Images/Website_Screenshot_7.png)
