@@ -70,8 +70,9 @@ const Navbar = () => {
 						</li>
 					</ul>
 					<ul className='hidden items-center space-x-8 lg:flex'>
+						{/* Dark/Light Mood Toggle Button */}
 						<li>
-							<input type='checkbox' className='toggle mr-2' />
+							<input type='checkbox' className='toggle mr-2' title='Dark/Light' />
 						</li>
 						<li>
 							{currentUser?.emailVerified ? (
@@ -79,8 +80,8 @@ const Navbar = () => {
 									<NavLink to='/login'>
 										<button
 											className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
-											aria-label='Login'
-											title='Login'
+											aria-label='Logout'
+											title='Logout'
 											onClick={() => {
 												handlerOnLogout();
 											}}
@@ -104,7 +105,7 @@ const Navbar = () => {
 						</li>
 						{/* Profile Container */}
 						{currentUser?.emailVerified ? (
-							<NavLink to='/' className='nav-link'>
+							<NavLink to='/profile' className='nav-link'>
 								<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
 									<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
 										<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
@@ -140,8 +141,9 @@ const Navbar = () => {
 											</NavLink>
 										</div>
 										<div className='flex items-center justify-end'>
+											{/* Dark/Light Toggle Button */}
 											<div className=''>
-												<input type='checkbox' className='toggle toggle-sm ' />
+												<input type='checkbox' className='toggle toggle-sm ' title='Dark/Light' />
 											</div>
 											<button
 												aria-label='Close Menu'
@@ -207,8 +209,8 @@ const Navbar = () => {
 														<NavLink to='/login'>
 															<button
 																className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none w-full md:w-1/2 md:block mx-auto'
-																aria-label='Login'
-																title='Login'
+																aria-label='Logout'
+																title='Logout'
 																onClick={() => {
 																	handlerOnLogout();
 																}}
@@ -233,7 +235,7 @@ const Navbar = () => {
 											<div className='flex items-center justify-center'>
 												{/* sm - profile container */}
 												{currentUser?.emailVerified ? (
-													<NavLink to='/' className='nav-link'>
+													<NavLink to='/profile' className='nav-link'>
 														<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
 															<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
 																<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
