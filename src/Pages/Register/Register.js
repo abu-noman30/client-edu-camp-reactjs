@@ -40,8 +40,8 @@ const Register = () => {
 					form.reset();
 					console.log(user);
 					// ...
-					toast.success('Your account has been created successfully. Please verify your email address.');
-
+					// toast.success('Your account has been created successfully. Please verify your email address.');
+					toast.success('Your account has been created successfully. ');
 					navigate('/login');
 				})
 				.catch((error) => {

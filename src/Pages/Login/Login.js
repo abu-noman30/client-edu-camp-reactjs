@@ -39,7 +39,7 @@ const Login = () => {
 						navigate(from, { replace: true });
 					}
 				} else {
-					toast.error('Please verify your Email!');
+					// toast.error('Please verify your Email!');
 					handlerOnLogout();
 				}
 				console.log(user);
@@ -93,7 +93,7 @@ const Login = () => {
 						navigate(from, { replace: true });
 					}
 				} else {
-					toast.error('Please verify your Email! A verification link has been sent to your email.');
+					// toast.error('Please verify your Email! A verification link has been sent to your email.');
 					handlerOnLogout();
 				}
 				console.log(user);
@@ -123,7 +123,7 @@ const Login = () => {
 						navigate(from, { replace: true });
 					}
 				} else {
-					toast.error('Please verify your Email! A verification link has been sent to your email.');
+					// toast.error('Please verify your Email! A verification link has been sent to your email.');
 					handlerOnLogout();
 				}
 

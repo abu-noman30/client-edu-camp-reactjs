@@ -7,7 +7,7 @@ const SingleCourse = (props) => {
 	return (
 		<>
 			{/* Single Course Card Container */}
-			<div className=''>
+			<div data-aos='zoom-in'>
 				<Link to={`/all-courses/${id}`}>
 					<div className='card w-full bg-base-100 shadow-xl shadow-gray-400'>
 						<figure className='p-1 rounded-lg'>
