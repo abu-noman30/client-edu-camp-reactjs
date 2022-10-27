@@ -23,7 +23,7 @@ const Navbar = () => {
 		<>
 			<div className='px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
 				<div className='relative flex items-center justify-between z-2'>
-					<NavLink to='/' aria-label='eduCamp' title='Company' className='inline-flex items-center'>
+					<NavLink to='/' aria-label='eduCamp' title='eduCamp' className='inline-flex items-center'>
 						<span>
 							<img src='Images/logo.png' alt='logo' className='w-14 h-14' />
 						</span>
@@ -31,7 +31,15 @@ const Navbar = () => {
 					</NavLink>
 					<ul className='hidden items-center space-x-8 lg:flex'>
 						<li>
-							<NavLink to='/home' aria-label='Home' title='Home' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+							<NavLink
+								to='/home'
+								aria-label='Home'
+								title='Home'
+								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+								style={({ isActive }) => ({
+									textDecoration: isActive ? 'underline' : ''
+								})}
+							>
 								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2 '>
 									<span>
 										<FAIcons.FaHome className='mr-2' />
@@ -41,7 +49,15 @@ const Navbar = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/courses' aria-label='Courses' title='Courses' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+							<NavLink
+								to='/courses'
+								aria-label='Courses'
+								title='Courses'
+								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+								style={({ isActive }) => ({
+									textDecoration: isActive ? 'underline' : ''
+								})}
+							>
 								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2'>
 									<span>
 										<FAIcons.FaBookReader className='mr-2' />
@@ -51,7 +67,15 @@ const Navbar = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/blog' aria-label='Blog' title='Blog' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+							<NavLink
+								to='/blog'
+								aria-label='Blog'
+								title='Blog'
+								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+								style={({ isActive }) => ({
+									textDecoration: isActive ? 'underline' : ''
+								})}
+							>
 								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2'>
 									<span>
 										<FAIcons.FaCommentAlt className='mr-2' />
@@ -61,7 +85,15 @@ const Navbar = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/faq' aria-label='FAQ' title='FAQ' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+							<NavLink
+								to='/faq'
+								aria-label='FAQ'
+								title='FAQ'
+								className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+								style={({ isActive }) => ({
+									textDecoration: isActive ? 'underline' : ''
+								})}
+							>
 								<span className='flex items-center justify-start hover:bg-slate-100 rounded-lg p-2 '>
 									<span>
 										<FAIcons.FaQuestion className='mr-2' />
@@ -116,7 +148,7 @@ const Navbar = () => {
 						{currentUser?.emailVerified ? (
 							<NavLink to='/profile' className='nav-link'>
 								<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
-									<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
+									<button className='border-2 border-blue-900 border-spacing-2 p-1 rounded-sm hover:bg-slate-100  hover:rounded-md'>
 										<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
 									</button>
 								</li>
@@ -142,7 +174,7 @@ const Navbar = () => {
 								<div className='p-5 bg-white border rounded shadow-sm'>
 									<div className='flex items-center justify-between mb-4'>
 										<div>
-											<NavLink to='/' aria-label='Company' title='Company' className='inline-flex items-center'>
+											<NavLink to='/' aria-label='Company' title='eduCamp' className='inline-flex items-center'>
 												<span>
 													<img src='Images/logo.png' alt='logo' className='w-16 h-1/2' />
 												</span>
@@ -180,7 +212,15 @@ const Navbar = () => {
 									<nav>
 										<ul className='space-y-4 grid '>
 											<li>
-												<NavLink to='/home' aria-label='Home' title='Home' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+												<NavLink
+													to='/home'
+													aria-label='Home'
+													title='Home'
+													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+													style={({ isActive }) => ({
+														textDecoration: isActive ? 'underline' : ''
+													})}
+												>
 													<span className='flex items-center justify-start'>
 														<span>
 															<FAIcons.FaHome className='mr-2' />
@@ -190,7 +230,15 @@ const Navbar = () => {
 												</NavLink>
 											</li>
 											<li>
-												<NavLink to='/courses' aria-label='Courses' title='Courses' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+												<NavLink
+													to='/courses'
+													aria-label='Courses'
+													title='Courses'
+													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+													style={({ isActive }) => ({
+														textDecoration: isActive ? 'underline' : ''
+													})}
+												>
 													<span className='flex items-center justify-start'>
 														<span>
 															<FAIcons.FaBookReader className='mr-2' />
@@ -200,7 +248,15 @@ const Navbar = () => {
 												</NavLink>
 											</li>
 											<li>
-												<NavLink to='/blog' aria-label='Blog' title='Blog' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+												<NavLink
+													to='/blog'
+													aria-label='Blog'
+													title='Blog'
+													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+													style={({ isActive }) => ({
+														textDecoration: isActive ? 'underline' : ''
+													})}
+												>
 													<span className='flex items-center justify-start'>
 														<span>
 															<FAIcons.FaCommentAlt className='mr-2' />
@@ -210,7 +266,15 @@ const Navbar = () => {
 												</NavLink>
 											</li>
 											<li>
-												<NavLink to='/faq' aria-label='FAQ' title='FAQ' className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+												<NavLink
+													to='/faq'
+													aria-label='FAQ'
+													title='FAQ'
+													className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+													style={({ isActive }) => ({
+														textDecoration: isActive ? 'underline' : ''
+													})}
+												>
 													<span className='flex items-center justify-start'>
 														<span>
 															<FAIcons.FaQuestion className='mr-2' />
@@ -255,7 +319,7 @@ const Navbar = () => {
 												{currentUser?.emailVerified ? (
 													<NavLink to='/profile' className='nav-link'>
 														<li className='tooltip tooltip-bottom' data-tip={currentUser.displayName}>
-															<button className='border-2 border-blue-900 border-spacing-2 p-2 rounded-lg hover:bg-slate-100 hover:rounded-lg hover:p-2'>
+															<button className='border-2 border-blue-900 border-spacing-2 p-1 rounded-sm hover:bg-slate-100 hover:rounded-md '>
 																<img src={currentUser.photoURL} alt='' className='rounded-circle me-2' style={{ width: '1.5rem', height: '1.5rem' }} />
 															</button>
 														</li>
