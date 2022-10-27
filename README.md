@@ -15,6 +15,7 @@
 7. By clicking "Profile" icon user can view the profile details if the user is Loged in.
 8. System is Fully Authenticate By "Google Firebase Authentication".
 9. There are also "Blog" and "FAQ" page. From there user can find related Questions about the website.
+10. System is fully responsive.
 #
 
 ## Technology Uses (Frameworks, libraries):
