@@ -68,6 +68,7 @@ const Login = () => {
 				if (resetEmail === '' || resetEmail === null) {
 					toast.error('Please enter your email!');
 				} else {
+					setResetEmail('');
 					toast.success(' Email sent. Please check your email for password reset link');
 				}
 			})
@@ -84,7 +85,8 @@ const Login = () => {
 			.then((result) => {
 				// This gives you a Google Access Token. You can use it to access the Google API.
 				const user = result.user;
-				if (user && user.uid === true) {
+				console.log(user);
+				if (user && user.uid) {
 					if (from === '/' || from === '/home') {
 						toast.success('Login Successful');
 						navigate('/');
@@ -282,14 +284,17 @@ const Login = () => {
 							</div>
 						</div>
 
-						<button
-							className='py-2 px-6 rounded bg-blue-700 hover:bg-blue-600 text-white border-blue-800 mx-1'
-							onClick={() => {
-								handlerResetPassword();
-							}}
-						>
-							Confirm
-						</button>
+						<div className='modal-action'>
+							<label
+								htmlFor='my-modal-3'
+								className='py-2 px-6 rounded bg-blue-700 hover:bg-blue-600 text-white border-blue-800 mx-1'
+								onClick={() => {
+									handlerResetPassword();
+								}}
+							>
+								Confirm
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>
