@@ -6,9 +6,9 @@ import ReactToPdf from 'react-to-pdf';
 const targetRef = createRef();
 
 const options = {
-	// orientation: 'landscape',
-	// unit: 'in',
-	// format: [8.5]
+	orientation: 'landscape',
+	unit: 'in',
+	format: [10.6, 10.2]
 };
 
 const CourseDetails = () => {
