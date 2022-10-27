@@ -6,6 +6,8 @@ import { FbaseAuthContext } from '../../Context/AuthContextAPI';
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { currentUser, methodSignOut } = useContext(FbaseAuthContext);
+	const [darkToggle, setDarkToggle] = useState(false);
+	// console.log(darkToggle);
 
 	// User logout
 	const handlerOnLogout = () => {
@@ -72,7 +74,14 @@ const Navbar = () => {
 					<ul className='hidden items-center space-x-8 lg:flex'>
 						{/* Dark/Light Mood Toggle Button */}
 						<li>
-							<input type='checkbox' className='toggle mr-2' title='Dark/Light' />
+							<input
+								type='checkbox'
+								className='toggle mr-2'
+								title='Dark/Light'
+								onClick={() => {
+									setDarkToggle(!darkToggle);
+								}}
+							/>
 						</li>
 						<li>
 							{currentUser?.emailVerified ? (
@@ -142,8 +151,16 @@ const Navbar = () => {
 										</div>
 										<div className='flex items-center justify-end'>
 											{/* Dark/Light Toggle Button */}
+
 											<div className=''>
-												<input type='checkbox' className='toggle toggle-sm ' title='Dark/Light' />
+												<input
+													type='checkbox'
+													className='toggle toggle-sm '
+													title='Dark/Light'
+													onClick={() => {
+														setDarkToggle(!darkToggle);
+													}}
+												/>
 											</div>
 											<button
 												aria-label='Close Menu'
@@ -221,13 +238,14 @@ const Navbar = () => {
 													</>
 												) : (
 													<>
-														<NavLink
-															to='/login'
-															className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none'
-															aria-label='Login'
-															title='Login'
-														>
-															Login
+														<NavLink to='/login'>
+															<button
+																className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-900 focus:shadow-outline focus:outline-none w-full md:w-1/2 md:block mx-auto'
+																aria-label='Login'
+																title='Login'
+															>
+																Login
+															</button>
 														</NavLink>
 													</>
 												)}

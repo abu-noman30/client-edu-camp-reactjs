@@ -218,7 +218,9 @@ font-bold
 							threads in a thread pool, assigns a thread to the client’s request which is then processed and send back to the event loop, and response is sent to the respective client.
 							<br />
 							<u>The thread pool size can be change:</u>
-							<b> process.env.UV_THREADPOOL_SIZE = 1;</b>
+							<br />
+							<br />
+							<b className='break-words'>process.env.UV_THREADPOOL_SIZE=1</b>
 						</div>
 					</div>
 				</div>

@@ -8,7 +8,7 @@ const targetRef = createRef();
 const options = {
 	orientation: 'landscape',
 	unit: 'in',
-	format: [10.6, 10.2]
+	format: [10.6, 10.5]
 };
 
 const CourseDetails = () => {

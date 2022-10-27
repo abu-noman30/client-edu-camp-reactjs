@@ -4,9 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FbaseAuthContext } from '../../Context/AuthContextAPI';
 
 const Login = () => {
-	const { methodSignIn, methodGoogleSignIn, methodSignOut, methodGithubSignIn } = useContext(FbaseAuthContext);
+	const { methodSignIn, methodGoogleSignIn, methodSignOut, methodGithubSignIn, methodSendPasswordResetEmail } = useContext(FbaseAuthContext);
 	const [error, setError] = useState('');
-	// const [resetEmail, setResetEmail] = useState('');
+	const [modalError, setModalError] = useState('');
+	const [resetEmail, setResetEmail] = useState('');
 	const navigate = useNavigate();
 	const location = useLocation();
 
@@ -55,20 +56,27 @@ const Login = () => {
 	};
 
 	// Reset Password using email------
-
+	const handlerModalResetEmail = (e) => {
+		const email = e.target.value;
+		setResetEmail(email);
+	};
 	// console.log(resetEmail);
-	// const handlerResetPassword = (resetEmail) => {
-	// 	methodSendPasswordResetEmail(resetEmail)
-	// 		.then(() => {
-	// 			// Email sent.
-	// 			console.log('email sent');
-	// 		})
-	// 		.catch((error) => {
-	// 			const errorMessage = error.message;
-	// 			setError(errorMessage);
-	// 			console.error(error);
-	// 		});
-	// };
+	const handlerResetPassword = () => {
+		methodSendPasswordResetEmail(resetEmail)
+			.then(() => {
+				// Email sent.
+				if (resetEmail === '' || resetEmail === null) {
+					toast.error('Please enter your email!');
+				} else {
+					toast.success(' Email sent. Please check your email for password reset link');
+				}
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+				setModalError(errorMessage);
+				console.error(error);
+			});
+	};
 
 	//  for signing in with google------------
 	const handlerGoogleSignIn = () => {
@@ -216,19 +224,22 @@ const Login = () => {
 											/>
 										</div>
 									</div>
-									<div className='flex items-center mb-6 -mt-4'>
-										<div className='flex items-center justify-evenly'>
-											<Link to='/' className='inline-flex text-xs font-thin text-gray-500 sm:text-sm  hover:text-gray-700 '>
-												Forgot Your Password?
-											</Link>
-										</div>
-									</div>
+
 									<div className='flex w-full'>
 										<button className='py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg '>
 											Login
 										</button>
 									</div>
 								</form>
+							</div>
+							<div className='flex items-center justify-center mt-2 '>
+								<div className='flex items-center justify-evenly'>
+									{/* Modal Trigger Button */}
+									<label htmlFor='my-modal-3' className='inline-flex text-xs font-thin text-gray-500 sm:text-sm  hover:text-gray-700 link'>
+										Forgot Your Password?
+									</label>
+									{/* ______________ */}
+								</div>
 							</div>
 							<div className='flex items-center justify-center mt-6'>
 								<Link to='/register' className='inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700  '>
@@ -241,6 +252,48 @@ const Login = () => {
 					</div>
 				</div>
 			</div>
+
+			{/*  */}
+			{/* Modal Container */}
+			<input type='checkbox' id='my-modal-3' className='modal-toggle' />
+			<div className='modal '>
+				<div className='modal-box relative rounded shadow-2xl '>
+					<div className=' p-8 border shadow-inner shadow-blue-200'>
+						<label htmlFor='my-modal-3' className='btn btn-sm bg-blue-800 hover:bg-blue-700 absolute right-2 top-2'>
+							✕
+						</label>
+						<h3 className='text-lg font-bold underline underline-offset-2 italic'>Enter Your Email:</h3>
+						<p className='text-red-600 font-semibold text-center py-4'>{modalError}</p>
+						<div className='flex flex-col mb-5'>
+							<div className='flex relative '>
+								<span className='rounded-l-md inline-flex  items-center px-3 border-t bg-white border-l border-b  border-blue-300 text-gray-500 shadow-sm text-sm'>
+									<svg width='15' height='15' fill='currentColor' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z'></path>
+									</svg>
+								</span>
+								<input
+									type='email'
+									className=' rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+									placeholder='Your email'
+									onChange={(e) => {
+										handlerModalResetEmail(e);
+									}}
+								/>
+							</div>
+						</div>
+
+						<button
+							class='py-2 px-6 rounded bg-blue-700 hover:bg-blue-600 text-white border-blue-800 mx-1'
+							onClick={() => {
+								handlerResetPassword();
+							}}
+						>
+							Confirm
+						</button>
+					</div>
+				</div>
+			</div>
+			{/* ------------- */}
 		</>
 	);
 };
